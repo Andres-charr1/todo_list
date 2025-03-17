@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre Tarea</ion-label>
+    <ion-input [(ngModel)]="task.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripcion</ion-label>
+    <ion-textarea [(ngModel)]="task.description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha de Registro</ion-label>
+    <ion-datetime
+      displayFormat="MM/DD/YYYY"
+      [(ngModel)]="task.date"
+    ></ion-datetime>
+  </ion-item>
+
+  
+
+  <ion-button expand="full" (click)="saveTask()">Guardar</ion-button>
+</ion-content>

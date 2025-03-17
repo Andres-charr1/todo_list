@@ -1,0 +1,20 @@
+<ion-list>
+  @for (task of tasks; track task.id){
+  <ion-item>
+    <ion-label>
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.description }}</p>
+      <p>{{ task.date }}</p>
+    </ion-label>
+    <ion-checkbox
+      slot="end"
+      [checked]="task.done"
+      (ionChange)="toggleTaskCompletion(task)"
+    ></ion-checkbox>
+    <ion-button color="danger" (click)="deleteTask(task.id)"
+      >Eliminar</ion-button
+    >
+  </ion-item>
+
+  }
+</ion-list>
